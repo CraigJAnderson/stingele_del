@@ -69,4 +69,10 @@ stingele_del
 │   └── stingele.yaml
 └── tmp
 ```
+
+Here's how I run snakemake
+```
+bsub -J over_lord -R "rusage[mem=8000]" -M 8000 -W 60:00 -o log/overlord_batch2.out -e log/overlord_batch2.error snakemake -s Snakefile_batch2 --executor cluster-generic --cluster-generic-submit-cmd 'bsub -J smk-{rule}-{wildcards.sample} -n {resources.cpu} -M {resources.lsf_mem} -R rusage[mem={resources.lsf_mem}] -W {resources.time} -o log/{rule}.{wildcards.sample}.out -e log/{rule}.{wildcards.sample}.err' --jobs 20 --printshellcmds --keep-going --use-conda
+```
+
 Please note: our assumption is that every read represents an individual mutagenic event, though without barcoding individual reads, we're unable to assert this.
