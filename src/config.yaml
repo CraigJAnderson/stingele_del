@@ -1,0 +1,23 @@
+##src/config.yaml
+PTH : "/omics/groups/OE0640/internal/anderson/craig/new/Stingele"
+SAMPLE_LIST : "/resources/sample_names.txt"
+GENOME : "reporter"
+BIN : "/bin"
+
+executor: cluster-generic
+jobs: 70
+latency-wait : 60
+restart-times : 3
+rerun-incomplete : True
+printshellcmds: true
+
+cluster-generic-submit-cmd: >
+  bsub
+  -J smk-{rule}-{wildcards}
+  -B -N
+  -n {resources.cpu}
+  -M {resources.lsf_mem}
+  -R "rusage[mem={resources.lsf_mem}]"
+  -W {resources.time}
+  -o log/{rule}.{wildcards}.out
+  -e log/{rule}.{wildcards}.err

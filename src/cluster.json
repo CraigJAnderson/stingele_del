@@ -1,0 +1,43 @@
+{
+    "__default__": {
+        "cpu": 20,
+        "lsf_mem": 20000,
+        "time": "24:00",
+        "job_name": "smk-{rule}-{wildcards}"
+    },
+    "trim_fastq": {
+        "cpu": 20,
+        "lsf_mem": 20000,
+        "time": "24:00"
+    },
+    "align_samples": {
+        "cpu": 20,
+        "lsf_mem": 20000,
+        "time": "48:00"
+    },
+    "sort_bam": {
+        "cpu": 12,
+        "lsf_mem": 20000,
+        "time": "24:00"
+    },
+    "picard_clean": {
+        "cpu": 1,
+        "lsf_mem": 20000,
+        "time": "24:00"
+    },
+    "picard_fix": {
+        "cpu": 1,
+        "lsf_mem": 20000,
+        "time": "24:00"
+    },
+    "picard_mark": {
+        "cpu": 1,
+        "lsf_mem": 20000,
+        "time": "24:00"
+    },
+    "all_coverage": {
+        "cpu": 1,
+        "lsf_mem": 20000,
+        "time": "24:00"
+    }
+}
