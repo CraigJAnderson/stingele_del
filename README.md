@@ -8,6 +8,7 @@ The input is paired end Illumina sequencing data, where both the forward and the
 
 I provide the scripts necessary to recapitulate these results. The raw data and processed alignments are on data dryad. Before running the Snakefile, please ensure you establish the two conda environments.
 
+'''
 stingele_del
 ├── alignment #completely processed alignments available on dryad
 │   ├── AAVS1_24_U_rehead_fix_clean_sorted.bam
@@ -67,5 +68,5 @@ stingele_del
 │   ├── lcprov2.yaml
 │   └── stingele.yaml
 └── tmp
-
+'''
 Please note: our assumption is that every read represents an individual mutagenic event, though without barcoding individual reads, we're unable to assert this.
