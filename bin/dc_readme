@@ -1,0 +1,25 @@
+There's a lot going on here, so please reach out if you need clarification.
+
+That the construct is covered by a read pair (R1 + R2) represents an opportunity to get rid of abberant signals supporting deletions. The main analysis only concerns focal deletions (fdel), where there is a single deletion reported, but in finding these I source secondary deletions, insertions, and SNVs.
+
+To do this, I superficially filter reads on alignment and base quality, and identify reads with insertions or deletions. Aftwerwards, I create a consensus from read pairs, identifying instances where there are more complex combinations of mutations. I then use the ranges of pairs of reads to very slightly bolster my confidence in my deletion calls. Without applying any filters, this script will tell you very supperficially why a read pair has failed.
+
+I was playing with calling SNVs for this work initially, but the output for this is silenced until I can work on it further. Feel free to play with it.
+
+The output fields of the resulting csv .del file are as follows:
+
+template          -read name
+mut_class         -way of identifying references, deletion only, SNV only, insertion only or combinations of mutations
+fail              -why did the consensus calling fail? All empty here.
+fdel_start        -focal deletion start site
+fdel_end          -focal deletion end site
+fdel_size         -size of focal deletion
+fdel_seq          -forward DNA sequence of deletino
+n_secondary_dels  -number of extra deletions smaller than focal
+secondary_dels    -characterisation of other deletions
+n_ins             -nuber of insertions
+ins               -characterisation of insertions
+n_snvs            -number of SNVs
+snvs              -characterisation of SNVs
+r1cov             -extent of R1
+r2cov             -extent of R2
