@@ -6,7 +6,7 @@ The input is paired end Illumina sequencing data, where both the forward and the
 2) Process bam files to characterise the position and size of deletions using pysam
 3) Statistically analyse the difference between different cell lines and abasic site configurations in R.
 
-I provide the scripts necessary to recapitulate these results. The raw data and processed alignments are on data dryad. Before running the Snakefile, please ensure you establish the two conda environments.
+I provide the scripts necessary to recapitulate these results. The raw data and processed alignments are on data dryad. Before running the Snakefile, please ensure you establish the two conda environments, lcprov2 and stingele, using the yaml files in src.
 
 ```
 stingele_del
